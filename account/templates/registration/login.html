@@ -1,0 +1,14 @@
+{% extends "blog/form-base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="form_body">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form|crispy }}
+            <input class="submit" type ="submit" value="Login">
+            <a href="{% url 'password_reset' %}"><input class="extra-button" type="button" value="Forgot Password?"></a>
+            <a href="{% url 'signup' %}"><input class="more-extra-button" type="button" value="Create New account?"></a>
+        </form>
+    </div>
+    {% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'blog/form-base.html' %}
+{% block content %}
+    <body>
+        <form method="post">{% csrf_token %}
+            <p>Are you sure you want to delete ?</p>
+            <input style="background-color: red; border: none; color: white;" type="submit" value="Yes delete">
+        </form>
+    </body>
+{% endblock %}

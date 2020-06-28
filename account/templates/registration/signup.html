@@ -1,0 +1,13 @@
+{% extends "blog/form-base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="form_body">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form|crispy }}
+            <input class="submit" type ="submit" value="Register">
+            <a href="{% url 'login' %}"><input class="extra-button" type="button" value="Have an account?"></a>
+        </form>
+    </div>
+    {% endblock %}
