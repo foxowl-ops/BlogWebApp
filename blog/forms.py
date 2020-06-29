@@ -70,5 +70,5 @@ class PostForm(forms.ModelForm):
             if img.size < 1048576*3:
                 return img
             else:
-                raise forms.ValidationError("image size should be less than 1 MB", code = "inavlid")
+                raise forms.ValidationError("image size should be less than 3 MB", code = "inavlid")
 
